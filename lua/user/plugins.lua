@@ -56,10 +56,24 @@ return packer.startup(function(use)
   use { "lewis6991/impatient.nvim", commit = "969f2c5c90457612c09cf2a13fee1adaa986d350" }
   use { "lukas-reineke/indent-blankline.nvim", commit = "6177a59552e35dfb69e1493fd68194e673dc3ee2" }
   use { "goolord/alpha-nvim", commit = "ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94" }
+  use { "tpope/vim-surround" }
+  use { "tpope/vim-sensible" }
+  use { "tpope/vim-fugitive" }
+  use { "dstein64/vim-startuptime" }
+  use { "ThePrimeagen/harpoon" }
+  use { "ThePrimeagen/vim-be-good" }
+  use { "navarasu/onedark.nvim" }
+  use { "rebelot/kanagawa.nvim" }
+  use { "drzel/vim-gui-zoom" }
+  use { "mg979/vim-visual-multi" }
+  use { "unblevable/quick-scope" }
+  use { "folke/which-key.nvim" }
+  use { "tzachar/cmp-tabnine", run='./install.sh' }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "8223c970677e4d88c9b6b6d81bda23daf11062bb" }
   use { "lunarvim/darkplus.nvim", commit = "2584cdeefc078351a79073322eb7f14d7fbb1835" }
+  use { "LunarVim/onedarker.nvim" }
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" } -- The completion plugin
