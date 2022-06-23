@@ -5,12 +5,15 @@ end
 
 local servers = {
   "sumneko_lua",
+  "gopls",
   "cssls",
   "html",
   "tsserver",
   "pyright",
+  "jedi_language_server",
   "bashls",
   "jsonls",
+  "clangd",
   "yamlls",
 }
 
