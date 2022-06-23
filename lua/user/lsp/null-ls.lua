@@ -19,6 +19,10 @@ null_ls.setup {
     formatting.black.with { extra_args = { "--fast" } },
     formatting.stylua,
     formatting.google_java_format,
-    diagnostics.flake8,
+    diagnostics.flake8.with {
+      extra_args = {"--indent-size", "3", "--ignore","E201,E202,E501,E121",
+        "--max-line-length", "85"},
+      filetypes = { "python" }
+    },
   },
 }
