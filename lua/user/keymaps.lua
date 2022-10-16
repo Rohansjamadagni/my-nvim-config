@@ -42,6 +42,7 @@ keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 -- Save buffer
 keymap("n", "<leader>w", "<cmd>w<CR>", opts)
 
+
 -- Insert --
 -- Press jk fast to enter
 
@@ -67,8 +68,8 @@ keymap("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
 -- Comment
-keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
-keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
+keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", opts)
+keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>')
 
 -- DAP
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
