@@ -1,5 +1,6 @@
 local servers = {
 	"sumneko_lua",
+	"gopls",
 	"cssls",
 	"html",
 	"tsserver",
@@ -7,6 +8,7 @@ local servers = {
 	"bashls",
 	"jsonls",
 	"yamlls",
+  "jdtls"
 }
 
 local settings = {

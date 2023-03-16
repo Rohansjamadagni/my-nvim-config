@@ -71,13 +71,20 @@ return packer.startup(function(use)
   use { "mg979/vim-visual-multi" }
   use { "unblevable/quick-scope" }
   use { "folke/which-key.nvim" }
+  use { "folke/noice.nvim", requires = {
+    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    "MunifTanjim/nui.nvim",
+    -- OPTIONAL:
+    --   `nvim-notify` is only needed, if you want to use the notification view.
+    --   If not available, we use `mini` as the fallback
+    "rcarriga/nvim-notify",
+    } }
   use { "tzachar/cmp-tabnine", run='./install.sh' }
 
   -- Colorschemes
   use { "lunarvim/darkplus.nvim", commit = "2584cdeefc078351a79073322eb7f14d7fbb1835" }
   use { "LunarVim/onedarker.nvim" }
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
-  use { "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" }
   use { "ellisonleao/gruvbox.nvim" }
   use { 'shaunsingh/solarized.nvim'}
   use { 'sonph/onehalf', rtp = 'vim'}
@@ -95,7 +102,6 @@ return packer.startup(function(use)
   use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" } -- a bunch of snippets to use
 
   -- LSP
-  -- use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- simple to use language server installer
   use { "neovim/nvim-lspconfig", commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda" } -- enable LSP
   use { "williamboman/mason.nvim", commit = "c2002d7a6b5a72ba02388548cfaf420b864fbc12"}
   use { "williamboman/mason-lspconfig.nvim", commit = "0051870dd728f4988110a1b2d47f4a4510213e31" }
@@ -103,12 +109,11 @@ return packer.startup(function(use)
   use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
 
   -- Telescope
-  use { "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" }
+  use { "nvim-telescope/telescope.nvim" }
 
   -- Treesitter
   use {
-    "nvim-treesitter/nvim-treesitter",
-    commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
+    "nvim-treesitter/nvim-treesitter"
   }
 
   -- Git
