@@ -40,4 +40,6 @@ vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
 vim.opt.relativenumber = true                  -- set relative numbered lines
 vim.opt.colorcolumn = "85"
+vim.opt.list = true
+vim.opt.listchars="tab:> ,trail:-,nbsp:+,eol:$"
  -- colorcolumn = "120"

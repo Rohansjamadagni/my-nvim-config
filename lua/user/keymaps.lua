@@ -35,7 +35,6 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 -- Naviagate buffers
 keymap("n", "<S-l>", "<cmd>bnext<CR>", opts)
 keymap("n", "<S-h>", "<cmd>bprevious<CR>", opts)
-
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
@@ -83,18 +82,22 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 -- Harpoon
 keymap("n", "<leader>hh", "<cmd>lua require'harpoon.ui'.toggle_quick_menu()<cr>", opts)
 keymap("n", "<leader>ha", "<cmd>lua require'harpoon.mark'.add_file()<cr>", opts)
-keymap("n", "<leader>h1", "<cmd>lua require'harpoon.ui'.nav_file(1)<cr>", opts)
-keymap("n", "<leader>h2", "<cmd>lua require'harpoon.ui'.nav_file(2)<cr>", opts)
-keymap("n", "<leader>h3", "<cmd>lua require'harpoon.ui'.nav_file(3)<cr>", opts)
-keymap("n", "<leader>h4", "<cmd>lua require'harpoon.ui'.nav_file(4)<cr>", opts)
-keymap("n", "<leader>h5", "<cmd>lua require'harpoon.ui'.nav_file(5)<cr>", opts)
+keymap("n", "<leader>1", "<cmd>lua require'harpoon.ui'.nav_file(1)<cr>", opts)
+keymap("n", "<leader>2", "<cmd>lua require'harpoon.ui'.nav_file(2)<cr>", opts)
+keymap("n", "<leader>3", "<cmd>lua require'harpoon.ui'.nav_file(3)<cr>", opts)
+keymap("n", "<leader>4", "<cmd>lua require'harpoon.ui'.nav_file(4)<cr>", opts)
+keymap("n", "<leader>5", "<cmd>lua require'harpoon.ui'.nav_file(5)<cr>", opts)
 
 -- fugitive
-keymap("n", "<leader>gs", "<cmd>G<cr>", opts)
+keymap("n", "<leader>gs", "<cmd>vert G<cr>", opts)
 keymap("n", "<leader>gf", "<cmd>diffget //2<cr>", opts)
 keymap("n", "<leader>gj", "<cmd>diffget //3<cr>", opts)
 keymap("n", "<leader>gt", "<cmd>Git push<cr>", opts)
 keymap("n", "<leader>gy", "<cmd>Git pull<cr>", opts)
+keymap("n", "<leader>gl", "<cmd>Gclog<cr>", opts)
+
+-- undo tree
+keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>", opts)
 
 -- Neovide
 if vim.g.neovide == true then

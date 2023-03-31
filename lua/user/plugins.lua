@@ -65,7 +65,7 @@ return packer.startup(function(use)
   use { "dstein64/vim-startuptime" }
   use { "ThePrimeagen/harpoon" }
   use { "ThePrimeagen/vim-be-good" }
-  use { "navarasu/onedark.nvim" }
+  use { "mbbill/undotree" }
   use { "rebelot/kanagawa.nvim" }
   use { "drzel/vim-gui-zoom" }
   use { "mg979/vim-visual-multi" }
@@ -123,6 +123,10 @@ return packer.startup(function(use)
   use { "mfussenegger/nvim-dap", commit = "6b12294a57001d994022df8acbe2ef7327d30587" }
   use { "rcarriga/nvim-dap-ui", commit = "1cd4764221c91686dcf4d6b62d7a7b2d112e0b13" }
   use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
+
+  -- golang
+  use { "ray-x/go.nvim" }
+  use { "ray-x/guihua.lua" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -1,6 +1,7 @@
 local servers = {
 	"sumneko_lua",
 	"gopls",
+  "golangci_lint_ls",
 	"cssls",
 	"html",
 	"tsserver",
