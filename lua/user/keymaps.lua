@@ -99,6 +99,10 @@ keymap("n", "<leader>gl", "<cmd>Gclog<cr>", opts)
 -- undo tree
 keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>", opts)
 
+-- sync
+keymap("n", "<leader>W",
+"<cmd>!rsync -cavur --delete $(git rev-parse --show-toplevel)/ us155:/home/rohanj/repos/$(git rev-parse --show-toplevel | cut -d '/' -f5)/<cr>")
+
 -- Neovide
 if vim.g.neovide == true then
   keymap("n", "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>", { silent = true })
