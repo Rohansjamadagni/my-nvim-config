@@ -10,6 +10,8 @@ M.treesitter = {
     "typescript",
     "tsx",
     "c",
+    "python",
+    "go",
     "markdown",
     "markdown_inline",
   },
