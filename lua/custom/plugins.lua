@@ -61,7 +61,16 @@ local plugins = {
     "tpope/vim-fugitive",
     cmd = "G"
   },
-  { "ThePrimeagen/harpoon" },
+  { "ThePrimeagen/harpoon",
+    lazy = false,
+    config = function()
+      require("harpoon").setup({
+        menu = {
+          width = vim.api.nvim_win_get_width(0) - 4,
+        }
+      })
+    end
+  },
   {
     "ThePrimeagen/vim-be-good",
     cmd = "VimBeGood"
@@ -77,6 +86,15 @@ local plugins = {
   {
     "kylechui/nvim-surround",
     lazy = false
+  },
+
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  },
+  {
+    "tpope/vim-dispatch",
+    cmd = "Make"
   },
 
   -- To make a plugin not be loaded
