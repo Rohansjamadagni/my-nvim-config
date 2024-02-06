@@ -7,6 +7,7 @@ M.general = {
     ["<leader>ln"] = { "<cmd>Navbuddy<CR>",  opts = { nowait = true } },
     ["<leader>pa"] = { "<cmd>lua require('harpoon.mark').add_file()<CR>",  opts = { nowait = true } },
     ["<leader>pl"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", opts = { nowait = true } },
+    ["<leader>E"] = { "<cmd>Telescope file_browser<CR>", opts = { nowait = true } },
     ["<C-1>"] = { "<cmd>lua require('harpoon.ui').nav_file(1)<CR>", opts = { nowait = true } },
     ["<C-2>"] = { "<cmd>lua require('harpoon.ui').nav_file(2)<CR>", opts = { nowait = true } },
     ["<C-3>"] = { "<cmd>lua require('harpoon.ui').nav_file(3)<CR>", opts = { nowait = true } },
