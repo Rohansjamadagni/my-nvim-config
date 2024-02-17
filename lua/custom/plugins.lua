@@ -94,7 +94,7 @@ local plugins = {
   },
   {
     "tpope/vim-dispatch",
-    cmd = "Make"
+    cmd = {"Make", "Dispatch", "Spawn"}
   },
   {
     'mrcjkb/rustaceanvim',
