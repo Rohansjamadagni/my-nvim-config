@@ -91,6 +91,21 @@ vim.api.nvim_create_autocmd( {"BufWinEnter"}, {
   command = ":set tabstop=6 softtabstop=0 expandtab shiftwidth=3 smarttab"
 })
 
+vim.api.nvim_create_autocmd( {"BufWritePre"}, {
+  pattern = "*" ,
+  command = ":%s/\\s\\+$//e"
+})
+
+vim.api.nvim_create_autocmd( {"BufWritePre"}, {
+  pattern = "*.go" ,
+  command = ":!gofmt -w %"
+})
+
+vim.api.nvim_create_autocmd( {"BufWritePre"}, {
+  pattern = "*.go" ,
+  command = ":!goimports -w %"
+})
+
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 	callback = function()
 		vim.highlight.on_yank({ higroup = "Visual", timeout = 200 })
@@ -106,7 +121,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   group = vim.api.nvim_create_augroup("ReloadNvChad", {}),
 
   callback = function(opts)
-    local fp = vim.fn.fnamemodify(vim.fs.normalize(vim.api.nvim_buf_get_name(opts.buf)), ":r") --[[@as string]]
+    local fp = vim.fn.fnamemodify(vim.fs.normalize(vim.api.nvim_buf__name(opts.buf)), ":r") --[[@as string]]
     local app_name = vim.env.NVIM_APPNAME and vim.env.NVIM_APPNAME or "nvim"
     local module = string.gsub(fp, "^.*/" .. app_name .. "/lua/", ""):gsub("/", ".")
 

@@ -59,7 +59,7 @@ local plugins = {
   },
   {
     "tpope/vim-fugitive",
-    cmd = "G"
+    cmd = {"G", "Git"}
   },
   { "ThePrimeagen/harpoon",
     lazy = false,
@@ -108,7 +108,7 @@ local plugins = {
       -- Optional settings go here!
      vim.g.unception_open_buffer_in_new_tab = true
     end
-  }
+  },
 
 
   -- To make a plugin not be loaded
