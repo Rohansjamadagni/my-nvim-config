@@ -138,6 +138,11 @@ local plugins = {
 			require("oil").setup()
 		end,
 	},
+	{
+		"mfussenegger/nvim-lint",
+    ft = { "py" }
+	},
+
 
 	-- To make a plugin not be loaded
 	-- {
