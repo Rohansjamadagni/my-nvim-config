@@ -55,7 +55,8 @@ opt.termguicolors = true
 opt.showmode = false
 opt.pumheight = 10
 opt.cmdheight = 1
-opt.laststatus = 3 -- Global statusline
+opt.laststatus = 0 -- Disable Global statusline
+opt.winbar ='%f %m' -- Per split statusline instead of global
 
 -- Editing
 opt.expandtab = true

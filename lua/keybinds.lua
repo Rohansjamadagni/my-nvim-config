@@ -194,3 +194,9 @@ if vim.g.neovide then
   map("n", "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>", { silent = true })
   map("n", "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
 end
+
+
+--- Arista Specific stuff --- 
+map("n", "<leader>a2", ":set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab")
+map("n", "<leader>a3", ":set tabstop=6 softtabstop=0 expandtab shiftwidth=3 smarttab")
+map("n", "<leader>a4", ":set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab")
