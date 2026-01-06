@@ -64,11 +64,13 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-      -- Configure LSP servers
-      local lspconfig = require("lspconfig")
+      -- Configure LSP servers using vim.lsp.config
 
       -- Lua
-      lspconfig.lua_ls.setup({
+      vim.lsp.config.lua_ls = {
+        cmd = { "lua-language-server" },
+        filetypes = { "lua" },
+        root_markers = { ".luarc.json", ".luarc.jsonc", ".luacheckrc", ".stylua.toml", "stylua.toml", "selene.toml", "selene.yml", ".git" },
         on_attach = on_attach,
         capabilities = capabilities,
         settings = {
@@ -82,25 +84,37 @@ return {
             diagnostics = { disable = { "missing-fields" } },
           },
         },
-      })
+      }
 
       -- Python
-      lspconfig.pyright.setup({
+      vim.lsp.config.pyright = {
+        cmd = { "pyright-langserver", "--stdio" },
+        filetypes = { "python" },
+        root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", "Pipfile", "pyrightconfig.json", ".git" },
         on_attach = on_attach,
         capabilities = capabilities,
-      })
+      }
 
       -- TypeScript
-      lspconfig.ts_ls.setup({
+      vim.lsp.config.ts_ls = {
+        cmd = { "typescript-language-server", "--stdio" },
+        filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+        root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
         on_attach = on_attach,
         capabilities = capabilities,
-      })
+      }
 
       -- Go
-      lspconfig.gopls.setup({
+      vim.lsp.config.gopls = {
+        cmd = { "gopls" },
+        filetypes = { "go", "gomod", "gowork", "gotmpl" },
+        root_markers = { "go.work", "go.mod", ".git" },
         on_attach = on_attach,
         capabilities = capabilities,
-      })
+      }
+
+      -- Enable all configured LSP servers
+      vim.lsp.enable({ "lua_ls", "pyright", "ts_ls", "gopls" })
 
       -- Diagnostic configuration
       vim.diagnostic.config({
