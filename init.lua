@@ -152,3 +152,10 @@ autocmd("TermOpen", {
     vim.cmd("startinsert")
   end,
 })
+
+autocmd("TermClose", {
+  callback = function()
+    -- Use 'bdelete' instead of 'close' to remove the buffer entirely
+    vim.cmd("bdelete!")
+  end
+})

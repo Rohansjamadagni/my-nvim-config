@@ -110,23 +110,26 @@ end, { desc = "Git status (vsplit 60-40)" })
 map("n", "<leader>gri", function()
   vim.ui.input({ prompt = "Rebase last N commits: " }, function(input)
     if input and input ~= "" then
-      vim.cmd("Git rebase -i HEAD~" .. input)
+      vim.cmd("Git rebase -i --autosquash --autostash HEAD~" .. input)
     end
   end)
-end, { desc = "Git rebase -i HEAD~N" })
+end, { desc = "Git rebase -i --autosquash --autostash HEAD~N" })
 
 -- Git absorb
-map("n", "<leader>ga", ":Git absorb<CR>", { desc = "Git absorb" })
+map("n", "<leader>ga", ":Git absorb --and-rebase<CR>", { desc = "Git absorb" })
 
 -- Git commit fixup (with commit picker)
 map("n", "<leader>gcf", function()
   Snacks.picker.git_log({
     limit = 100,
-    confirm = function(item)
-      if item and item.hash then
-        vim.cmd("Git commit --fixup=" .. item.hash)
-      end
-    end,
+    actions = {
+      confirm = function(picker, item)
+        picker:close() -- Close the picker first
+        if item and item.commit then
+          vim.cmd("Git commit --fixup=" .. item.commit)
+        end
+      end,
+    },
   })
 end, { desc = "Git commit --fixup" })
 
