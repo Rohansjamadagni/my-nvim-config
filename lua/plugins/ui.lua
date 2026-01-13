@@ -19,29 +19,22 @@ return {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
     build = ":TSUpdate",
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        ensure_installed = {
-          "lua",
-          "vim",
-          "vimdoc",
-          "query",
-          "rust",
-          "python",
-          "javascript",
-          "typescript",
-          "go",
-          "bash",
-          "markdown",
-          "markdown_inline",
-        },
-        highlight = {
-          enable = true,
-          use_languagetree = true,
-        },
-        indent = { enable = true },
-      })
-    end,
+    -- config = function()
+    --   require("nvim-treesitter").install({
+    --       "lua",
+    --       "vim",
+    --       "vimdoc",
+    --       "query",
+    --       "rust",
+    --       "python",
+    --       "javascript",
+    --       "typescript",
+    --       "go",
+    --       "bash",
+    --       "markdown",
+    --       "markdown_inline",
+    --   })
+    -- end,
   },
 
   -- Git signs
