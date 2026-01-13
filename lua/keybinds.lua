@@ -74,7 +74,7 @@ map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 -- ============================================================================
 
 -- Oil.nvim
-map("n", "-", "<CMD>Oil --float .<CR>", { desc = "Open current directory" })
+map("n", "-", "<CMD>Oil --float<CR>", { desc = "Open directory of current file" })
 
 -- Harpoon
 map("n", "<leader>pa", function() require("harpoon.mark").add_file() end, { desc = "Harpoon: Add file" })
