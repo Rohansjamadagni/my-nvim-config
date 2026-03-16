@@ -154,8 +154,29 @@ autocmd("TermOpen", {
 })
 
 autocmd("TermClose", {
-  callback = function()
-    -- Use 'bdelete' instead of 'close' to remove the buffer entirely
-    vim.cmd("bdelete!")
-  end
+  callback = function(event)
+    -- Close only the terminal buffer/window without quitting Neovim
+    local bufnr = event.buf
+    vim.schedule(function()
+      if not vim.api.nvim_buf_is_valid(bufnr) then
+        return
+      end
+      -- Get all windows showing this terminal buffer
+      local term_wins = vim.fn.win_findbuf(bufnr)
+      for _, win in ipairs(term_wins) do
+        if vim.api.nvim_win_is_valid(win) then
+          -- If this is the last window, don't close it — switch to a different buffer
+          if #vim.api.nvim_list_wins() == 1 then
+            vim.api.nvim_win_set_buf(win, vim.api.nvim_create_buf(true, false))
+          else
+            vim.api.nvim_win_close(win, true)
+          end
+        end
+      end
+      -- Delete the terminal buffer
+      if vim.api.nvim_buf_is_valid(bufnr) then
+        vim.api.nvim_buf_delete(bufnr, { force = true })
+      end
+    end)
+  end,
 })
