@@ -25,7 +25,7 @@ return {
       local servers = {
         "lua_ls",
         "rust_analyzer",
-        "pyright",
+        "pyrefly",
         "ts_ls",
         "gopls",
       }
@@ -87,10 +87,10 @@ return {
       }
 
       -- Python
-      vim.lsp.config.pyright = {
-        cmd = { "pyright-langserver", "--stdio" },
+      vim.lsp.config.pyrefly = {
+        cmd = { "pyrefly", "lsp" },
         filetypes = { "python" },
-        root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", "Pipfile", "pyrightconfig.json", ".git" },
+        root_markers = { "pyrefly.toml", "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", "Pipfile", ".git" },
         on_attach = on_attach,
         capabilities = capabilities,
       }
@@ -114,7 +114,7 @@ return {
       }
 
       -- Enable all configured LSP servers
-      vim.lsp.enable({ "lua_ls", "pyright", "ts_ls", "gopls" })
+      vim.lsp.enable({ "lua_ls", "pyrefly", "ts_ls", "gopls" })
 
       -- Diagnostic configuration
       vim.diagnostic.config({
