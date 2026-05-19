@@ -134,7 +134,7 @@ map("n", "<leader>gcf", function()
 end, { desc = "Git commit --fixup" })
 
 -- Git log
-map("n", "<leader>gl", ":Git log --decorate --all<CR>", { desc = "Git log (with branches)" })
+map("n", "<leader>gl", ":Git log --decorate<CR>", { desc = "Git log (with branches)" })
 
 -- Verify HEAD commit signature
 map("n", "<leader>gv", ":Git log -1 --show-signature HEAD<CR>", { desc = "Verify HEAD signature" })
